@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/intentRelational">
+
+    <fragment
+        android:id="@+id/intentRelational"
+        android:name="com.gfq.gdemolist.fragment.IntentRelational"
+        android:label="IntentRelational" >
+        <action
+            android:id="@+id/action_intentRelational_to_mediaQuery"
+            app:destination="@id/mediaQuery" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaQuery"
+        android:name="com.gfq.gdemolist.fragment.MediaQuery"
+        android:label="MediaQuery" />
+</navigation>

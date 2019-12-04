@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_activity_custom_view"
+    app:startDestination="@id/choiceListView">
+
+    <fragment
+        android:id="@+id/choiceListView"
+        android:name="com.gfq.gdemolist.fragment.ChoiceListView"
+        android:label="ChoiceListView" />
+</navigation>
