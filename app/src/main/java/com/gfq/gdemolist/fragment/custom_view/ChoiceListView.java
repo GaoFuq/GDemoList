@@ -1,4 +1,4 @@
-package com.gfq.gdemolist.fragment;
+package com.gfq.gdemolist.fragment.custom_view;
 
 import android.util.SparseBooleanArray;
 import android.widget.AbsListView;
@@ -51,12 +51,15 @@ public class ChoiceListView extends BaseFragment<FragmentChoiceListviewBinding> 
         binding.btnConfirm.setOnClickListener(v->{
             SparseBooleanArray checkedItemPositions = binding.listView.getCheckedItemPositions();
             StringBuilder stringBuilder= new StringBuilder();
-            for (int i = 0; i < mData.size(); i++) {
-                if(checkedItemPositions.get(i)){
-                    stringBuilder.append(mData.get(i)).append("-");
+            if(checkedItemPositions!=null) {
+                for (int i = 0; i < mData.size(); i++) {
+                    if (checkedItemPositions.get(i)) {
+                        stringBuilder.append(mData.get(i)).append("-");
+                    }
                 }
+                toast(stringBuilder.toString());
             }
-            toast(stringBuilder.toString());
         });
+
     }
 }

@@ -52,7 +52,12 @@ public abstract class BaseFragment<a extends ViewDataBinding> extends Fragment {
         View view = inflater.inflate(R.layout.fragment_base, container, false);
         FrameLayout content = view.findViewById(R.id.container);
         binding = DataBindingUtil.inflate(inflater, layout(), content, false);
-        content.addView(binding.getRoot());
+        if(binding==null){
+            View inflate = inflater.inflate(layout(), null, false);
+            content.addView(inflate);
+        }else {
+            content.addView(binding.getRoot());
+        }
         if (getArguments() != null) {
             getArgs();
         }
@@ -63,8 +68,10 @@ public abstract class BaseFragment<a extends ViewDataBinding> extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.executePendingBindings();
-        binding.setLifecycleOwner(this);
+        if(binding!=null) {
+            binding.executePendingBindings();
+            binding.setLifecycleOwner(this);
+        }
         controller = NavHostFragment.findNavController(this);
         main();
     }

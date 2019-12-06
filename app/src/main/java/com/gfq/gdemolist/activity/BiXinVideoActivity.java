@@ -43,10 +43,8 @@ import okhttp3.Request;
 public class BiXinVideoActivity extends BaseActivity<ActivityBixinBinding> {
     String name;
     private int pageNum = 1;
-
     List<String> listName;
     List<String> listPath;
-    int dataCount = 0;
     private int count = 0;
 
     @Override
@@ -63,30 +61,28 @@ public class BiXinVideoActivity extends BaseActivity<ActivityBixinBinding> {
         request();
 
 
-        binding.btnNext.setOnClickListener(v -> {
+        binding.btnRefresh.setOnClickListener(v -> {
             count = 0;
             listName.clear();
             listPath.clear();
             request();
         });
 
-        binding.btnShow.setOnClickListener(v -> {
-            count++;
-            if (count > dataCount - 1) {
-                count = 0;
-            }
-            binding.video.setVideoURI(Uri.parse(listPath.get(count)));
-            binding.video.start();
-            binding.btnShow.setText("共" + dataCount + "条数据,正在播放第" + (count + 1) + "个视频");
-        });
+
         binding.btnPlayNext.setOnClickListener(v -> {
+          count++;
+          if(count>listName.size()-1){
+              count=0;
+          }
+            playVideo();
+        });
+
+        binding.btnPlayPre.setOnClickListener(v->{
             count--;
             if (count < 0) {
-                count = dataCount - 1;
+                count = listName.size() - 1;
             }
-            binding.video.setVideoURI(Uri.parse(listPath.get(count)));
-            binding.video.start();
-            binding.btnShow.setText("共" + dataCount + "条数据,正在播放第" + (count + 1) + "个视频");
+            playVideo();
         });
         binding.btnPut.setOnClickListener(v -> {
             binding.btnPutInfo.setText("正在下载...");
@@ -94,6 +90,11 @@ public class BiXinVideoActivity extends BaseActivity<ActivityBixinBinding> {
         });
     }
 
+    private void playVideo(){
+        binding.video.setVideoURI(Uri.parse(listPath.get(count)));
+        binding.video.start();
+        binding.btnShow.setText("共" +  listName.size() + "条数据,正在播放第" + (count + 1) + "个视频");
+    }
     private void request() {
         Map<String, Object> map = new HashMap<>();
         map.put("cityName", "");
@@ -104,12 +105,10 @@ public class BiXinVideoActivity extends BaseActivity<ActivityBixinBinding> {
         APIService.call(APIService.api().bixin(map), new OnCallBack<BixinBean>() {
             @Override
             public void onSuccess(BixinBean bixinBean) {
-                if (bixinBean.getResult().getTimeLineList() != null && bixinBean.getResult().getTimeLineList().size() > 0) {
-                    binding.video.setVideoURI(Uri.parse(bixinBean.getResult().getTimeLineList().get(0).getVideoUrls().get(0)));
-                    binding.video.start();
+                if(bixinBean==null||bixinBean.getResult()==null){
+                    binding.btnShow.setText(bixinBean.getMsg());
+                    return;
                 }
-                dataCount = bixinBean.getResult().getTimeLineList().size();
-                binding.btnShow.setText("共" + dataCount + "条数据,正在播放第1个视频");
                 if (bixinBean.getResult().getTimeLineList() != null && bixinBean.getResult().getTimeLineList().size() > 0) {
                     for (int i = 0; i < bixinBean.getResult().getTimeLineList().size(); i++) {
                         if (bixinBean.getResult().getTimeLineList().get(i) != null) {
@@ -124,6 +123,8 @@ public class BiXinVideoActivity extends BaseActivity<ActivityBixinBinding> {
                             }
                         }
                     }
+                    binding.btnShow.setText("共" + listName.size() + "条数据,正在播放第1个视频");
+                    playVideo();
                 }
             }
         });

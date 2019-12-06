@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.MediaController;
 
@@ -20,6 +21,8 @@ import com.gfq.gdemolist.databinding.FragmentMediaQueryBinding;
 
 import java.io.File;
 import java.util.Calendar;
+
+import okio.Okio;
 
 /**
  * create by 高富强
@@ -182,4 +185,5 @@ public class MediaQuery extends BaseFragment<FragmentMediaQueryBinding> {
         }
         return null;
     }
+
 }

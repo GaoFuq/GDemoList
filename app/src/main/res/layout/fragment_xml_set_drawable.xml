@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="selector"
+            android:textSize="16sp"
+            app:bl_pressed_drawable="@drawable/clicked"
+            app:bl_unPressed_drawable="@drawable/click_not" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="有波纹触摸反馈的按钮"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:bl_corners_radius="20dp"
+            app:bl_pressed_drawable="#71C671"
+            app:bl_ripple_color="#71C671"
+            app:bl_ripple_enable="true"
+            app:bl_stroke_color="#8c6822"
+            app:bl_stroke_width="2dp"
+            app:bl_unPressed_drawable="#7CFC00" />
+
+
+        <!--        边框+背景+圆角-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="边框+背景+圆角"
+            android:textColor="#8c6822"
+            android:textSize="20sp"
+            app:bl_corners_radius="4dp"
+            app:bl_solid_color="#E3B666"
+            app:bl_stroke_color="#8c6822"
+            app:bl_stroke_width="2dp" />
+
+
+        <!--        渐变-->
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="渐变"
+            android:textColor="#4F94CD"
+            android:textSize="20sp"
+            app:bl_corners_radius="2dp"
+            app:bl_gradient_angle="0"
+            app:bl_gradient_endColor="#4F94CD"
+            app:bl_gradient_startColor="#63B8FF" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="0dp"
+            android:text="点击文字变色"
+            app:bl_pressed_textColor="#919DAF"
+            app:bl_unPressed_textColor="@android:color/holo_red_dark"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="点击边框变色"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:bl_pressed_solid_color="#FFDEAD"
+            app:bl_unPressed_solid_color="#E0000A"
+            app:bl_stroke_width="3dp"
+            app:bl_pressed_stroke_color="#C6E2FF"
+            app:bl_unPressed_stroke_color="#98FB98"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="设置style的方式"
+            android:textColor="#8c6822"
+            android:textSize="20sp"
+            style="@style/xml_set_drawable"/>
+
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:bl_position="left"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="@null"
+            android:text="点赞+1(设置drawable_left)"
+            app:bl_pressed_drawable="@drawable/ic_launcher_background"
+            app:bl_unPressed_drawable="@drawable/meinv" />
+
+        <Button
+            android:id="@+id/btn_like2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:bl_position="right"
+            android:background="@null"
+            android:focusable="true"
+            android:clickable="true"
+            android:text="未点赞(设置drawable_right)"
+            app:bl_selected_textColor="#fbdc4a"
+            app:bl_unSelected_textColor="@android:color/black"
+            app:bl_selected_drawable="@drawable/ic_launcher_background"
+            app:bl_unSelected_drawable="@drawable/meinv" />
+    </LinearLayout>
+</ScrollView>

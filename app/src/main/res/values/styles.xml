@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="xml_set_drawable">
+        <item name="bl_corners_radius">4dp</item>
+        <item name="bl_solid_color">#E3B666</item>
+        <item name="bl_stroke_color">#8c6822</item>
+        <item name="bl_stroke_width">2dp</item>
+    </style>
+
 </resources>

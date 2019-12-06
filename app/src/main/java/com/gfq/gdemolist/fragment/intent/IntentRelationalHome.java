@@ -1,4 +1,4 @@
-package com.gfq.gdemolist.fragment;
+package com.gfq.gdemolist.fragment.intent;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -193,7 +193,7 @@ import io.reactivex.schedulers.Schedulers;
 
 
  */
-public class IntentRelational extends BaseFragment<FragmentIntentRelationalBinding> {
+public class IntentRelationalHome extends BaseFragment<FragmentIntentRelationalBinding> {
     private RVBindingAdapter<String> adapter;
     private List<String> titles;
 

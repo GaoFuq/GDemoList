@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_activity_custom_view"
-    app:startDestination="@id/choiceListView">
+    app:startDestination="@id/customViewHome">
 
     <fragment
         android:id="@+id/choiceListView"
-        android:name="com.gfq.gdemolist.fragment.ChoiceListView"
+        android:name="com.gfq.gdemolist.fragment.custom_view.ChoiceListView"
         android:label="ChoiceListView" />
+    <fragment
+        android:id="@+id/customViewHome"
+        android:name="com.gfq.gdemolist.fragment.custom_view.CustomViewHome"
+        android:label="CustomViewHome" >
+        <action
+            android:id="@+id/action_customViewHome_to_choiceListView"
+            app:destination="@id/choiceListView" />
+        <action
+            android:id="@+id/action_customViewHome_to_scrollText"
+            app:destination="@id/scrollText" />
+        <action
+            android:id="@+id/action_customViewHome_to_xmlSetDrawable"
+            app:destination="@id/xmlSetDrawable" />
+        <action
+            android:id="@+id/action_customViewHome_to_anim"
+            app:destination="@id/anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/scrollText"
+        android:name="com.gfq.gdemolist.fragment.custom_view.ScrollText"
+        android:label="ScrollText" />
+    <fragment
+        android:id="@+id/xmlSetDrawable"
+        android:name="com.gfq.gdemolist.fragment.custom_view.XmlSetDrawable"
+        android:label="XmlSetDrawable" />
+    <fragment
+        android:id="@+id/anim"
+        android:name="com.gfq.gdemolist.fragment.custom_view.Anim"
+        android:label="Anim" />
 </navigation>

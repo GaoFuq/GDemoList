@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gfq.gdemolist.activity.BiXinVideoActivity;
+import com.gfq.gdemolist.activity.Camera2testActivity;
 import com.gfq.gdemolist.activity.CustomViewActivity;
 import com.gfq.gdemolist.activity.IntentActivity;
 import com.gfq.gdemolist.base.BaseActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         addItem("View相关");
         addItem("改变 RecycleView ItemDecoration 装饰");
         addItem("爬取比心视频播放");
+        addItem("Camera2");
     }
 
     private void onItemClick(int position) {
@@ -61,6 +63,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 break;
             case 3:
                 startActivity(new Intent(this, BiXinVideoActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(this, Camera2testActivity.class));
                 break;
         }
 

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.gfq.gdemolist.view.ScrollTextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.gfq.gdemolist.view.ScrollTextView
+            android:id="@+id/text2"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.gfq.gdemolist.view.ScrollTextView
+            android:id="@+id/text3"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.gfq.gdemolist.view.ScrollTextView
+            android:id="@+id/text4"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.gfq.gdemolist.view.ScrollTextView
+            android:id="@+id/text5"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/changeBGcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="改变背景颜色"/>
+            <Button
+                android:id="@+id/changeTEXTcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="改变文字颜色"/>
+            <Button
+                android:id="@+id/changeBG_TEXTcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="改变文字的背景颜色"/>
+            <Button
+                android:id="@+id/changeScrollSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="改变滚动速度"/>
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"/>
+    </LinearLayout>
+</layout>
