@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,6 +28,7 @@
         <activity android:name=".activity.CustomViewActivity" />
         <activity android:name=".activity.BiXinVideoActivity" />
         <activity android:name=".activity.Camera2testActivity" />
+        <activity android:name=".activity.MediaSelectActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

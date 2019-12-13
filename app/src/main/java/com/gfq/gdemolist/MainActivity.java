@@ -3,10 +3,6 @@ package com.gfq.gdemolist;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.View;
-
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.gfq.gdemolist.activity.BiXinVideoActivity;
 import com.gfq.gdemolist.activity.Camera2testActivity;
@@ -66,6 +62,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 break;
             case 4:
                 startActivity(new Intent(this, Camera2testActivity.class));
+                break;
+            case 5:
                 break;
         }
 

@@ -3,12 +3,16 @@ package com.gfq.gdemolist.fragment.intent;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 
+import androidx.recyclerview.widget.ItemTouchHelper;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
+import com.gfq.gdemolist.rv_itemdecoration.RVItemDecoration_1;
 import com.gfq.gdemolist.util.Permission;
 import com.gfq.gdemolist.R;
 import com.gfq.gdemolist.base.BaseFragment;
@@ -249,6 +253,7 @@ public class IntentRelationalHome extends BaseFragment<FragmentIntentRelationalB
                 break;
             case 2:
                 shareVideo();
+                break;
             case 3:
                 asClickHome();
                 break;
@@ -440,6 +445,7 @@ public class IntentRelationalHome extends BaseFragment<FragmentIntentRelationalB
             }
         };
         binding.recycleView.setAdapter(adapter);
+        binding.recycleView.addItemDecoration(new RVItemDecoration_1(Color.GREEN));
     }
 
 
